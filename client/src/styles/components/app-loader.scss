@@ -1,0 +1,17 @@
+.AppLoader {
+    @include flex-vertical;
+    @include full-screen;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($colorMain, .45);
+    color: $colorYellow;
+    z-index: 10000;
+
+    &:after {
+        @include full-screen;
+        content: '';
+        display: block;
+        pointer-events: none;
+        z-index: 10001;
+    }
+}

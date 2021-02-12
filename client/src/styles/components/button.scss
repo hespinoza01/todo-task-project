@@ -1,0 +1,30 @@
+.button {
+    border-radius: $border-radius-round;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.25s;
+    position: relative;
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    &:hover::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+    }
+}

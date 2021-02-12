@@ -1,0 +1,27 @@
+// Palette colors
+$colorMain: #1D1D1D;
+$colorBlack: #151515;
+$colorSecondary: #23AAB5;
+$colorBlue: #3B66B7;
+$colorGray: #707070;
+$colorYellow: #FECB2E;
+$colorRed: #B42C2C;
+$colorGreen: #2E8B12;
+
+// field text vars
+$field-color: #fff;
+$field-background: darken($colorMain, 5);
+$field-background-active: rgba(255, 255, 255, .05);
+$label-color: lighten($colorMain, 60);
+$border-color: rgba(255, 255, 255, .2);
+
+// border radius
+$border-radius-round: 100px;
+$border-radius: 10px;
+$divider: 2px solid rgba(255, 255, 255, .1);
+
+$font-color: lighten($colorMain, 70);
+$font-color-table: lighten($colorMain, 50);
+
+// others
+$box-shadow: 0 0 15px -3px rgba(darken($colorYellow, 40), .5);

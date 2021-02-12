@@ -1,0 +1,20 @@
+.navbar {
+    height: 100%;
+    padding: 8px 16px;
+}
+
+.navbar__container {
+    border-radius: $border-radius;
+    height: inherit;
+    background-color: rgba($color: #000000, $alpha: 1);
+    display: grid;
+    grid-template-columns: 1fr 24px min-content;
+    justify-items: center;
+    gap: 25px;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.navbar__container--user {
+    justify-self: flex-end;
+}

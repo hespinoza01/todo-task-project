@@ -1,0 +1,37 @@
+.FieldText {
+    @include flex-vertical;
+    border: none;
+
+    &:focus-within {
+        .FieldText-label {
+            color: $colorYellow;
+        }
+    }
+
+    .FieldText-label {
+        margin-bottom: 0.25rem;
+        padding-left: 1rem;
+        color: $label-color;
+        transition: color 0.25s;
+    }
+
+    .FieldText-input {
+        @include input-base;
+        border: 1px solid $border-color;
+        background-color: $field-background;
+        color: $field-color;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        transition: border-color 0.25s, background-color 0.25s;
+
+        &:placeholder {
+            color: $border-color;
+            opacity: 1;
+        }
+
+        &:focus {
+            background-color: $field-background-active;
+            border-color: $colorYellow;
+        }
+    }
+}

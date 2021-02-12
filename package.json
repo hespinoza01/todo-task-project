@@ -1,0 +1,18 @@
+{
+    "name": "todo-task-project",
+    "version": "1.0.0",
+    "description": "App to manage project task",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hespinoza01/todo-task-project-backend.git"
+    },
+    "keywords": [
+        "Todo"
+    ],
+    "author": "Harold Espinoza | haroldesptru@gmail.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/hespinoza01/todo-task-project-backend/issues"
+    },
+    "homepage": "https://github.com/hespinoza01/todo-task-project-backend#readme",
+}

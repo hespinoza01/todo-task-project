@@ -1,0 +1,47 @@
+// base styles for inputs
+@mixin input-base {
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+}
+
+// Link style base
+@mixin link-base {
+    display: inline-block;
+    text-decoration: none;
+    border: none;
+}
+
+// flexbox base declarations
+@mixin flex{
+    display: flex;
+}
+
+@mixin flex-horizontal {
+    @include flex;
+    flex-direction: row;
+}
+
+@mixin flex-vertical {
+    @include flex;
+    flex-direction: column;
+}
+
+@mixin full-screen {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+// text overflow
+@mixin hash {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 350px;
+    max-width: 700px;
+    cursor: pointer;
+    color: $colorSecondary;
+}

@@ -1,0 +1,28 @@
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-color: $colorMain;
+}
+
+fieldset {
+    border: none;
+}
+
+.icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin: 0 auto;
+    fill: currentColor;
+
+    path,
+    rect {
+      fill: currentColor;
+    }
+}

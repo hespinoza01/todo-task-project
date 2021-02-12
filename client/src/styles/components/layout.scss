@@ -1,0 +1,20 @@
+.layout {
+    display: grid;
+    grid-template-areas:
+        'drawer navbar'
+        'drawer content';
+    grid-template-columns: 235px 1fr;
+    grid-template-rows: 80px 1fr;
+}
+
+.layout__navbar {
+    grid-area: navbar;
+}
+
+.layout__drawer {
+    grid-area: drawer;
+}
+
+.layout__content {
+    grid-area: content;
+}

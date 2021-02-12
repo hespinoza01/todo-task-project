@@ -1,0 +1,42 @@
+{
+    "name": "todo-task-project",
+    "version": "1.0.0",
+    "description": "App to manage project task",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon ./dist/app.js",
+        "dev": "nodemon ./src/app.js --exec babel-node -e js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hespinoza01/todo-task-project-backend.git"
+    },
+    "keywords": [
+        "Todo"
+    ],
+    "author": "Harold Espinoza | haroldesptru@gmail.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/hespinoza01/todo-task-project-backend/issues"
+    },
+    "homepage": "https://github.com/hespinoza01/todo-task-project-backend#readme",
+    "dependencies": {
+        "@babel/core": "^7.12.16",
+        "@babel/node": "^7.12.16",
+        "@babel/preset-env": "^7.12.16",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "helmet": "^4.4.1",
+        "jsonwebtoken": "^8.5.1",
+        "morgan": "^1.10.0",
+        "mysql2": "^2.2.5",
+        "nodemon": "^2.0.7",
+        "sequelize": "^6.5.0"
+    },
+    "devDependencies": {
+        "babel-plugin-module-resolver": "^4.1.0",
+        "dotenv": "^8.2.0"
+    }
+}

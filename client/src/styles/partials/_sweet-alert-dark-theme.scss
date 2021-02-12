@@ -1,0 +1,47 @@
+.swal2-popup, .swal2-modal , .swal2-show {
+    background-color: $colorMain !important;
+    box-shadow: 0 0 10px -5px rgba(#fff, .4);
+}
+
+.swal2-title {
+    color: $colorYellow !important;
+}
+
+.swal2-text {
+    color: #fff !important;
+}
+
+.swal2-icon:before, .swal2-icon:after, .swal2-icon--success__hide-corners {
+    background-color: transparent;
+}
+
+.swal2-actions {
+  button {
+    color: #1d1d1d !important;
+    box-shadow: none !important;
+
+    &.swal2-confirm, &.swal2-ok {
+        background-color: $colorYellow !important;
+        border-color: transparent !important;
+        &:hover {
+            background-color: darken($colorYellow, 10) !important;
+        }
+
+        &:active {
+            border-color: $colorYellow !important;
+        }
+    }
+
+    &.swal2-cancel {
+        background-color: $colorRed !important;
+        border-color: transparent !important;
+        &:hover {
+            background-color: darken($colorRed, 10) !important;
+        }
+
+        &:active {
+            border-color: $colorRed !important;
+        }
+    }
+  }
+}
