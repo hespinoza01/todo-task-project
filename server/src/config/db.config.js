@@ -15,9 +15,6 @@ const { DB: dbConfig } = vars
 const db = new Sequelize(dbConfig.NAME, dbConfig.USERNAME, dbConfig.PASSWORD, {
     host: dbConfig.HOST,
     dialect: dbConfig.DIALECT,
-    define: {
-        freezeTableName: true,
-    },
     pool: {
         max: 5,
         min: 0,

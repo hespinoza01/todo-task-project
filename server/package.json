@@ -1,8 +1,8 @@
 {
-    "name": "todo-task-project",
+    "name": "todo-task-project-server",
     "version": "1.0.0",
     "description": "App to manage project task",
-    "main": "index.js",
+    "main": "app.js",
     "scripts": {
         "start": "nodemon ./dist/app.js",
         "dev": "nodemon ./src/app.js --exec babel-node -e js",
@@ -17,10 +17,6 @@
     ],
     "author": "Harold Espinoza | haroldesptru@gmail.com",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/hespinoza01/todo-task-project-backend/issues"
-    },
-    "homepage": "https://github.com/hespinoza01/todo-task-project-backend#readme",
     "dependencies": {
         "@babel/core": "^7.12.16",
         "@babel/node": "^7.12.16",
