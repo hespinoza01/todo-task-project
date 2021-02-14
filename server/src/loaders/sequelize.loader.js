@@ -3,9 +3,9 @@ import { UserModel, ProjectModel, TaskStateModel, TaskModel } from '@/models'
 
 // Initial data for TaskStateModel
 const taskStates = [
-    { description: 'Pendiente' },
-    { description: 'En proceso' },
-    { description: 'Finalizado' },
+    { id: 1, description: 'Pendiente' },
+    { id: 2, description: 'En proceso' },
+    { id: 3, description: 'Finalizado' },
 ]
 
 /**
@@ -29,7 +29,9 @@ export default async function (sequelizeInstance) {
     await sequelizeInstance.sync({ alter: true })
 
     // Initialize models data
-    await TaskStateModel.bulkCreate(taskStates, { validate: true })
+    if ((await TaskStateModel.count()) === 0) {
+        await TaskStateModel.bulkCreate(taskStates, { validate: true })
+    }
 
     return sequelizeInstance
 }

@@ -1,6 +1,36 @@
 import Joi from '@hapi/joi'
 import { ValidationErrorMessage } from '@/utils'
 
+/**
+ * Validation for login fields
+ * @param {Object} body
+ */
+export function LoginUserValidation(body) {
+    return new Promise((resolve, reject) => {
+        const schema = Joi.object({
+            email: Joi.string().exist().messages({
+                'any.required': 'El correo es requerido',
+            }),
+
+            password: Joi.string().exist().messages({
+                'any.required': 'La contraseña es requerida',
+            }),
+        })
+
+        const { error, value } = schema.validate(body)
+
+        if (error) {
+            reject(ValidationErrorMessage(error))
+        }
+
+        resolve(value)
+    })
+}
+
+/**
+ * User validator data for create/update actions
+ * @param {Object} body
+ */
 export default function UserValidator(body) {
     return new Promise((resolve, reject) => {
         // validations for user schema
@@ -25,7 +55,7 @@ export default function UserValidator(body) {
                 'any.required': 'El nombre del usuario es requerido',
             }),
 
-            password: Joi.string().min(6).required().messages({
+            password: Joi.string().min(6).exist().messages({
                 'string.min':
                     'La contraseña debe ser igual o mayor de 6 caracteres',
                 'any.required': 'La contraseña es requerida',

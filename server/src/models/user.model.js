@@ -1,7 +1,22 @@
 import { DataTypes as type, Model } from 'sequelize'
 import { db } from '@/config'
 
-class UserModel extends Model {}
+class UserModel extends Model {
+    /**
+     * Search user register by email
+     * @param {String} email - email user to search
+     * @return {Object|null}
+     */
+    static async findByEmail(email) {
+        const result = await UserModel.findOne({ where: { email } })
+
+        if (result) {
+            return result.dataValues
+        }
+
+        return result
+    }
+}
 
 UserModel.init(
     {
