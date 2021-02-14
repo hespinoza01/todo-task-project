@@ -1,6 +1,6 @@
 import express from 'express'
-import loaders from '#loaders'
-import { vars, db } from '#config'
+import loaders from '@/loaders'
+import { vars, db } from '@/config'
 
 async function startServer() {
     const app = express()

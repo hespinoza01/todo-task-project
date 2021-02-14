@@ -1,5 +1,5 @@
 // import models for sync
-import { UserModel, ProjectModel, TaskStateModel, TaskModel } from '../models'
+import { UserModel, ProjectModel, TaskStateModel, TaskModel } from '@/models'
 
 // Initial data for TaskStateModel
 const taskStates = [

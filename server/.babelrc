@@ -5,15 +5,16 @@
             "module-resolver",
             {
                 "alias": {
-                    "#api": "./src/api",
-                    "#controlles": "./src/api/controllers",
-                    "#middlewares": "./src/api/middlewares",
-                    "#routes": "./src/api/routes",
-                    "#config": "./src/config",
-                    "#loaders": "./src/loaders",
-                    "#models": "./src/models",
-                    "#services": "./src/services",
-                    "#validators": "./src/validators"
+                    "@/api": "./src/api",
+                    "@/controlles": "./src/api/controllers",
+                    "@/middlewares": "./src/api/middlewares",
+                    "@/routes": "./src/api/routes",
+                    "@/config": "./src/config",
+                    "@/loaders": "./src/loaders",
+                    "@/models": "./src/models",
+                    "@/services": "./src/services",
+                    "@/validators": "./src/validators",
+                    "@/utils": "./src/utils"
                 }
             }
         ]

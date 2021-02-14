@@ -1,5 +1,5 @@
 import { DataTypes as type, Model } from 'sequelize'
-import { db } from '#config'
+import { db } from '@/config'
 
 class TaskStateModel extends Model {}
 
