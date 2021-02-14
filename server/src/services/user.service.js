@@ -1,5 +1,5 @@
 import { UserModel } from '@/models'
-import { EncodePassword, CreateToken, isObject } from '@/utils'
+import { EncodePassword, CreateToken, isObject, ommitKey } from '@/utils'
 
 export default {
     createUser,
@@ -35,10 +35,8 @@ function createUser(userData) {
                 password: _password,
             })
 
-            const result = { ...newUser.dataValues }
-
-            // remove sensible data from user
-            delete result.password
+            // get raw data from prev consult and remove sensible data from user
+            const result = ommitKey(newUser.get({ plain: true }), 'password')
 
             resolve(result)
         } catch (error) {
@@ -79,10 +77,11 @@ function updateUser(userId, userData) {
                 password: _password,
             })
 
-            const result = { ...updatedUser.dataValues }
-
-            // remove sensible data from user
-            delete result.password
+            // get raw data from prev consult and remove sensible data from user
+            const result = ommitKey(
+                updatedUser.get({ plain: true }),
+                'password'
+            )
 
             resolve(result)
         } catch (error) {
@@ -110,7 +109,7 @@ function getUser(userId) {
                 return
             }
 
-            resolve(user.dataValues)
+            resolve(user.get({ plain: true }))
         } catch (error) {
             console.log(error)
             reject('Error al obtener los datos del usuario')

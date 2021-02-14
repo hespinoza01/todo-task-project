@@ -1,6 +1,11 @@
 import { UserService } from '@/services'
 import { UserValidation, LoginUserValidation } from '@/validators'
 
+/**
+ * POST: {{SERVER_ADDRESS}}/user
+ * params: UserValidationSchema
+ * Create a user acount
+ */
 export async function createUserController(req, res) {
     try {
         // Extract request and validate data
@@ -18,6 +23,11 @@ export async function createUserController(req, res) {
     }
 }
 
+/**
+ * PUT: {{SERVER_ADDRESS}}/user
+ * params: UserValidationSchema
+ * Update a current user account
+ */
 export async function updateUserController(req, res) {
     try {
         // extract user id
@@ -37,6 +47,10 @@ export async function updateUserController(req, res) {
     }
 }
 
+/**
+ * GET: {{SERVER_ADDRESS}}/user
+ * Get info from current user
+ */
 export async function getUserController(req, res) {
     try {
         // Extract user id storage for auth middleware
@@ -54,6 +68,11 @@ export async function getUserController(req, res) {
     }
 }
 
+/**
+ * POST: {{SERVER_ADDRESS}}/user/acceso
+ * params: LoginUserValidationSchema
+ * Check user credentials to application access
+ */
 export async function loginUserController(req, res) {
     try {
         // validate login fields

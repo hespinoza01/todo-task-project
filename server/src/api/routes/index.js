@@ -1,3 +1,4 @@
 import UserRoutes from './user.route'
+import ProjectRoutes from './project.route'
 
-export { UserRoutes }
+export { UserRoutes, ProjectRoutes }

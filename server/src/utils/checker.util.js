@@ -10,3 +10,24 @@ export function isObject(value) {
 
     return true
 }
+
+/**
+ * Return a new object with ommiteds keys
+ * @param {Object} objectData
+ * @param  {String} toOmmit
+ * @return {Object}
+ */
+export function ommitKey(objectData, ...toOmmit) {
+    if (typeof objectData !== 'object') {
+        return objectData
+    }
+
+    // create a object clon
+    const result = { ...objectData }
+
+    for (let key of toOmmit) {
+        delete result[key]
+    }
+
+    return result
+}

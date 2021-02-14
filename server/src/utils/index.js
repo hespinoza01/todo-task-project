@@ -1,7 +1,7 @@
 import ValidationErrorMessage from './validation-error-message.util'
 import EncodePassword from './encode-password.util'
 import { CreateToken, DecodeToken } from './auth-token.util'
-import { isObject } from './checker.util'
+import { isObject, ommitKey } from './checker.util'
 
 export {
     ValidationErrorMessage,
@@ -9,4 +9,5 @@ export {
     CreateToken,
     DecodeToken,
     isObject,
+    ommitKey,
 }
