@@ -5,5 +5,6 @@ import {
     isAuth,
     removeAuth,
 } from 'services/auth.service'
+import UserService from './user.service'
 
-export { setAuth, getAuth, getAuthToken, isAuth, removeAuth }
+export { setAuth, getAuth, getAuthToken, isAuth, removeAuth, UserService }

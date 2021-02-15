@@ -2,7 +2,6 @@
 @import 'partials/declarations';
 @import 'partials/base';
 @import 'partials/mixins';
-@import 'partials/sweet-alert-dark-theme';
 
 // Import componets
 @import 'components/field-password.scss';
@@ -11,13 +10,10 @@
 @import 'components/app-loader.scss';
 @import 'components/navbar.scss';
 @import 'components/button.scss';
-@import 'components/drawer.scss';
 @import 'components/layout.scss';
-@import 'components/list-of-commerces.scss';
-@import 'components/card-commerce.scss';
 @import 'components/search-bar.scss';
-@import 'components/avatar-user.scss';
 
 // Import views
 @import 'views/home.scss';
 @import 'views/login.scss';
+@import 'views/register.scss';

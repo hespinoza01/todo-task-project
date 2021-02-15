@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { BASE_URL_SERVER } from 'utils'
-import { getAuth, removeAuth } from 'services'
+import { getAuthToken, removeAuth } from 'services'
 
 /**
  * Hook for make REST petitions
@@ -8,35 +8,33 @@ import { getAuth, removeAuth } from 'services'
  * @param {Option} options
  * @returns {Array} [Axios, CancelPetition]
  */
-export default function Http() {
-    const CancelToken = axios.CancelToken
-    const source = CancelToken.source()
+const Http = axios.create({
+    // api base url
+    baseURL: BASE_URL_SERVER,
+    validateStatus: status => {
+        if (status === 401) {
+            removeAuth()
+            return true
+        }
 
-    const _axios = axios.create({
-        cancelToken: source,
-        // api base url
-        baseURL: BASE_URL_SERVER,
-        headers: {
-            ...getAuth(),
-        },
-        validateStatus: status => {
-            if (status === 401) {
-                removeAuth()
-                return true
-            }
+        if (status === 404) {
+            //window.location.href = '/404'
+        }
 
-            if (status === 404) {
-                window.location.href = '/404'
-            }
+        return status >= 200 && status < 300
+    },
+})
 
-            return status >= 200 && status < 300
-        },
-    })
+/**
+ * Add access toke before execute petition
+ */
+Http.interceptors.request.use(config => {
+    config.headers = {
+        ...config.headers,
+        Autorization: getAuthToken(),
+    }
 
-    return [
-        _axios,
-        _ => {
-            source.cancel('Petition canceled by user')
-        },
-    ]
-}
+    return config
+})
+
+export default Http

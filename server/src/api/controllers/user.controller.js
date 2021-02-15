@@ -16,7 +16,7 @@ export async function createUserController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })

@@ -4,7 +4,7 @@
 
     &:focus-within {
         .FieldText-label {
-            color: $colorYellow;
+            color: $colorSecondary;
         }
     }
 
@@ -18,8 +18,8 @@
     .FieldText-input {
         @include input-base;
         border: 1px solid $border-color;
-        background-color: $field-background;
-        color: $field-color;
+        background-color: $colorMain;
+        color: $colorSecondary;
         border-radius: $border-radius;
         font-size: 1rem;
         transition: border-color 0.25s, background-color 0.25s;
@@ -31,7 +31,7 @@
 
         &:focus {
             background-color: $field-background-active;
-            border-color: $colorYellow;
+            border-color: $colorSecondary;
         }
     }
 }

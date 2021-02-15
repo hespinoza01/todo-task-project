@@ -1,7 +1,7 @@
-.button {
-    border-radius: $border-radius-round;
+.Button {
+    border-radius: $border-radius;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1rem;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -15,16 +15,30 @@
     position: relative;
 
     &:active {
-        transform: scale(0.95);
+        transform: scale(0.98);
     }
 
-    &:hover::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-color: rgba($color: #000000, $alpha: 0.2);
+    &.primary {
+        background-color: $colorSecondary;
+        color: $colorMain;
+
+        &:hover {
+            background-color: darken($colorSecondary, 5);
+        }
+    }
+
+    &.secondary {
+        background-color: $colorMain;
+        color: $colorSecondary;
+        border: 1px solid $border-color;
+
+        &:hover {
+            background-color: darken($colorMain, 5);
+        }
+    }
+
+    &.text {
+        background-color: transparent;
+        color: $colorSecondary;
     }
 }

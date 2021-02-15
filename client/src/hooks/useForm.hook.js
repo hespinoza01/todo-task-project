@@ -5,11 +5,11 @@ import { useState } from 'react'
  * @param {Object} initialValue
  */
 export default function useForm(initialValue = {}) {
-    if (Object.prototype.toString.call(initialValue) !== '[object object]') {
+    if (Object.prototype.toString.call(initialValue) !== '[object Object]') {
         throw String('useform: invalid initial data')
     }
 
-    const [data, setData] = useState(defaultValue)
+    const [data, setData] = useState(initialValue)
 
     // Handle input onchanges values
     const onChange = e => {
@@ -29,7 +29,7 @@ export default function useForm(initialValue = {}) {
 
     return [
         {
-            value: state,
+            value: data,
             onChange,
         },
         resetData,

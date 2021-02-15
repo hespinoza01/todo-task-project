@@ -3,8 +3,8 @@
     @include full-screen;
     justify-content: center;
     align-items: center;
-    background-color: rgba($colorMain, .45);
-    color: $colorYellow;
+    background-color: rgba(darken($colorMain, 25), .4);
+    color: $colorSecondary;
     z-index: 10000;
 
     &:after {
