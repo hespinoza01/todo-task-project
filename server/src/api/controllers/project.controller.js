@@ -19,7 +19,7 @@ export async function createProjectController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })
@@ -41,7 +41,7 @@ export async function getProjectsFromUserController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })
@@ -71,7 +71,7 @@ export async function getProjectByIdController(req, res) {
 
         res.send(project)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })
@@ -104,7 +104,7 @@ export async function updateProjectController(req, res) {
         res.send(resutl)
     } catch (message) {
         console.log(message)
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })

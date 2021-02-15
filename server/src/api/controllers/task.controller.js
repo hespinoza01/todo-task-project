@@ -20,7 +20,7 @@ export async function createTaskController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })
@@ -42,7 +42,7 @@ export async function getTaskFromProjectController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })
@@ -70,7 +70,7 @@ export async function updateTaskController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })

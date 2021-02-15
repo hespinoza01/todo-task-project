@@ -40,7 +40,7 @@ export async function updateUserController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })
@@ -61,7 +61,7 @@ export async function getUserController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })
@@ -82,7 +82,7 @@ export async function loginUserController(req, res) {
 
         res.send(response)
     } catch (message) {
-        res.status(400).send({
+        res.send({
             error: true,
             message,
         })
