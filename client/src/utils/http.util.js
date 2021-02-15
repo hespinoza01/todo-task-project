@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { BASE_URL_SERVER } from 'utils'
-import { getAuthToken, removeAuth } from 'services'
+import { getAuth, removeAuth } from 'services'
 
 /**
  * Hook for make REST petitions
@@ -31,7 +31,7 @@ const Http = axios.create({
 Http.interceptors.request.use(config => {
     config.headers = {
         ...config.headers,
-        Autorization: getAuthToken(),
+        ...getAuth(),
     }
 
     return config

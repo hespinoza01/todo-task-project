@@ -1,16 +1,16 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { Http, ErrorAlert, SuccessAlert } from 'utils'
-import { setAuth } from './auth.service'
 
 /**
  * Make login petition to sever
  * @param {String} email
  * @param {String} password
  */
-function login(email, password) {
+function login({ email, password }) {
     return new Promise(async (resolve, _) => {
         try {
             const dataSend = { email, password }
+
             const { data } = await Http.post('/user/acceso', dataSend)
 
             if (data.error) {

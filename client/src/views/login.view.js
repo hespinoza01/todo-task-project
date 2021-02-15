@@ -1,26 +1,40 @@
-import { Link } from 'react-router-dom'
+import { Link, withRouter, Redirect } from 'react-router-dom'
 import { FieldText, FieldPassword, Button } from 'components'
 
 // import hooks
 import { useForm, useLoader } from 'hooks'
 
 // import services
-import { UserService } from 'services'
+import { UserService, setAuth, isAuth } from 'services'
 
-export default function Login() {
-    const [data, resetData] = useForm()
+function Login({ history }) {
+    const [data] = useForm()
     const [loader] = useLoader()
 
+    /**
+     * make petition server to check user credentials
+     */
     const onLogin = async e => {
         e.preventDefault()
         loader.show()
-        const { email, password } = data.value
 
-        const response = await UserService.login(email, password)
+        // capture server response
+        const response = await UserService.login(data.value)
 
-        console.log(response)
         loader.hide()
+
+        // if user credencials is correct, capture access token and redirect to home
+        if (response.token) {
+            setAuth(response.token)
+            history.push('/')
+        }
     }
+
+    // if already loged, redirect to home
+    if (isAuth()) {
+        return <Redirect to='/' />
+    }
+
     return (
         <section className='Login'>
             <form
@@ -31,14 +45,24 @@ export default function Login() {
                 <h1 className='Title'>Iniciar Sesión</h1>
 
                 <div>
-                    <FieldText name='email' label='Correo electrónico' />
-                    <FieldPassword name='password' label='Contraseña' />
+                    <FieldText
+                        name='email'
+                        type='email'
+                        label='Correo electrónico'
+                        required
+                    />
+
+                    <FieldPassword
+                        name='password'
+                        label='Contraseña'
+                        required
+                    />
                 </div>
 
                 <Button text='Iniciar sesión' />
 
                 <p className='create-account'>
-                    ¿Aún no tienes una cuenta?{' '}
+                    ¿Aún no tienes una cuenta?
                     <Link to='/registro' className='Link'>
                         regístrate
                     </Link>
@@ -47,3 +71,5 @@ export default function Login() {
         </section>
     )
 }
+
+export default withRouter(Login)

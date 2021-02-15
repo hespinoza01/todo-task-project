@@ -1,23 +1,38 @@
-import { Link } from 'react-router-dom'
+import { Link, Redirect, withRouter } from 'react-router-dom'
 import { Button, FieldText, FieldPassword } from 'components'
 
 // import hooks
 import { useForm, useLoader } from 'hooks'
 
 // import service
-import { UserService } from 'services'
+import { UserService, isAuth } from 'services'
 
-export default function Register() {
-    const [data, resetData] = useForm()
+function Register({ history }) {
+    const [data] = useForm()
     const [loader] = useLoader()
 
+    /**
+     * Submit user register
+     */
     const onRegister = async e => {
         e.preventDefault()
 
         loader.show()
+
+        // capture register response
         const response = await UserService.register(data.value)
-        console.log(response)
+
         loader.hide()
+
+        // if register was successfull, redirect to login
+        if (response) {
+            history.push('/acceso')
+        }
+    }
+
+    // if already loged, redirect to home
+    if (isAuth()) {
+        return <Redirect to='/' />
     }
 
     return (
@@ -30,15 +45,29 @@ export default function Register() {
                 <h1 className='Title'>Crear Cuenta</h1>
 
                 <div>
-                    <FieldText name='email' label='Correo electrónico' />
+                    <FieldText
+                        name='email'
+                        type='email'
+                        label='Correo electrónico'
+                        required
+                    />
 
-                    <FieldText name='fullname' label='Nombre completo' />
+                    <FieldText
+                        name='fullname'
+                        label='Nombre completo'
+                        required
+                    />
 
-                    <FieldPassword name='password' label='Contraseña' />
+                    <FieldPassword
+                        name='password'
+                        label='Contraseña'
+                        required
+                    />
 
                     <FieldPassword
                         name='confirmPassword'
                         label='Confirmar contraseña'
+                        required
                     />
                 </div>
 
@@ -54,3 +83,5 @@ export default function Register() {
         </section>
     )
 }
+
+export default withRouter(Register)
