@@ -1,4 +1,4 @@
-import { Link, Redirect, withRouter } from 'react-router-dom'
+import { Link, Redirect, useHistory } from 'react-router-dom'
 import { Button, FieldText, FieldPassword } from 'components'
 
 // import hooks
@@ -7,7 +7,8 @@ import { useForm, useLoader } from 'hooks'
 // import service
 import { UserService, isAuth } from 'services'
 
-function Register({ history }) {
+export default function Register() {
+    const history = useHistory()
     const [data] = useForm()
     const [loader] = useLoader()
 
@@ -83,5 +84,3 @@ function Register({ history }) {
         </section>
     )
 }
-
-export default withRouter(Register)

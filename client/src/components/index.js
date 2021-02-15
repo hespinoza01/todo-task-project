@@ -6,10 +6,9 @@ import FieldSelect from './field-select.component'
 import AppLoader from './app-loader.component'
 import PrivateRoute from './private-route.component'
 import Navbar from './navbar.component'
-import Layout from 'components/layout.component'
+import GreetingMessage from './greeting-message.component'
 
 export {
-    Layout,
     AppLoader,
     FieldPassword,
     FieldText,
@@ -18,4 +17,5 @@ export {
     FieldSelect,
     PrivateRoute,
     Navbar,
+    GreetingMessage,
 }

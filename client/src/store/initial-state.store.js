@@ -1,3 +1,5 @@
-const initialState = {}
+const initialState = {
+    user: {},
+}
 
 export default initialState

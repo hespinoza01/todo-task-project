@@ -1,4 +1,4 @@
-import { Link, withRouter, Redirect } from 'react-router-dom'
+import { Link, useHistory, Redirect } from 'react-router-dom'
 import { FieldText, FieldPassword, Button } from 'components'
 
 // import hooks
@@ -7,7 +7,8 @@ import { useForm, useLoader } from 'hooks'
 // import services
 import { UserService, setAuth, isAuth } from 'services'
 
-function Login({ history }) {
+export default function Login() {
+    const history = useHistory()
     const [data] = useForm()
     const [loader] = useLoader()
 
@@ -71,5 +72,3 @@ function Login({ history }) {
         </section>
     )
 }
-
-export default withRouter(Login)

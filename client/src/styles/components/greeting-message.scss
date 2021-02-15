@@ -1,0 +1,13 @@
+.GreetingMessage {
+    display: inline-block;
+    @include flex-horizontal;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    color: lighten($colorBlack, 15);
+
+    p {
+        font-weight: bold;
+        margin-right: .5rem;
+    }
+}

@@ -60,4 +60,26 @@ function register({ email, fullname, password, confirmPassword }) {
     })
 }
 
-export default { login, register }
+/**
+ * Get user info detail
+ */
+function getInfo() {
+    return new Promise(async (resolve, _) => {
+        try {
+            const { data } = await Http.get('/user')
+
+            // check error into response
+            if (data.error) {
+                throw String(data.message)
+            }
+
+            resolve(data)
+        } catch (error) {
+            console.error(error)
+            ErrorAlert(error)
+            resolve({})
+        }
+    })
+}
+
+export default { login, register, getInfo }

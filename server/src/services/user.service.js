@@ -109,7 +109,7 @@ function getUser(userId) {
                 return
             }
 
-            resolve(user.get({ plain: true }))
+            resolve(ommitKey(user.get({ plain: true }), 'password'))
         } catch (error) {
             console.log(error)
             reject('Error al obtener los datos del usuario')

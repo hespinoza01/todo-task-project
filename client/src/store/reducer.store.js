@@ -9,6 +9,18 @@ export default function Reducer(state, action) {
 
     // Verify action reducer type
     switch (type) {
+        /**
+         * Store user info into state context
+         */
+        case actions.SET_USER:
+            return { ...state, user: payload }
+
+        /**
+         * Remove user info into state context
+         */
+        case actions.DELETE_USER:
+            return { ...state, user: {} }
+
         default:
             return state
     }
