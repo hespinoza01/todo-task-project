@@ -1,7 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 // import components
-import { Navbar } from 'components'
+import { Navbar, ProjectList, ProjectBoard } from 'components'
 
 // import hooks
 import { useAppContext, useLoader } from 'hooks'
@@ -15,6 +15,8 @@ import { actions } from 'store'
 export default function Home() {
     const [, dispatch] = useAppContext()
     const [loader] = useLoader()
+
+    const [projectDetail, setProjectDetail] = useState({})
 
     /**
      * fetch user info from server
@@ -37,6 +39,11 @@ export default function Home() {
     return (
         <section className='Home'>
             <Navbar />
+
+            <div className='Home-content'>
+                <ProjectList onDetail={project => setProjectDetail(project)} />
+                <ProjectBoard data={projectDetail} />
+            </div>
         </section>
     )
 }

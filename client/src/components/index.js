@@ -7,6 +7,11 @@ import AppLoader from './app-loader.component'
 import PrivateRoute from './private-route.component'
 import Navbar from './navbar.component'
 import GreetingMessage from './greeting-message.component'
+import ProjectList from './project-list.component'
+import ProjectItem from './project-item.component'
+import ProjectBoard from './project-board.component'
+import ProjectForm from './project-form.component'
+import Modal from './modal.component'
 
 export {
     AppLoader,
@@ -18,4 +23,9 @@ export {
     PrivateRoute,
     Navbar,
     GreetingMessage,
+    ProjectList,
+    ProjectItem,
+    ProjectBoard,
+    ProjectForm,
+    Modal,
 }

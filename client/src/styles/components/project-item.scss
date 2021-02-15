@@ -1,0 +1,48 @@
+.ProjectItem {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    margin-bottom: 1rem;
+    padding: .5rem 1rem;
+    user-select: none;
+    cursor: pointer;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        background-color: rgba($colorSecondary, .25);
+    }
+
+    h3 {
+        @include text-overflow(210px, 100px);
+        color: $colorSecondary;
+        margin-bottom: .25rem;
+    }
+
+    p {
+        @include text-overflow(210px, 100px);
+        margin-bottom: .15rem;
+    }
+
+    span {
+        font-size: .85rem;
+        color: lighten($colorBlack, 30)
+    }
+
+    &.active {
+        background-color: $colorSecondary;
+
+        h3 {
+            color: $colorMain;
+        }
+
+        p {
+            color: lighten($colorSecondary, 40)
+        }
+
+        span  {
+            color: lighten($colorSecondary, 20)
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.ProjectForm {
+    background-color: $colorMain;
+    width: 400px;
+    padding: 1rem 2rem;
+    border-radius: $border-radius;
+    animation: show-animation .3s;
+
+    @keyframes show-animation {
+        from {
+            transform: scale(0);
+        }
+    }
+
+    .Title {
+        margin-bottom: 1.5rem;
+    }
+
+    .FieldText {
+        margin-bottom: 1rem;
+    }
+
+    .buttons {
+        margin-top: 2rem;
+    }
+}

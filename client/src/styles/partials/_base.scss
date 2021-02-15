@@ -24,6 +24,10 @@ fieldset {
     color: $colorSecondary
 }
 
+.swal2-container {
+    z-index: 10000 !important;
+}
+
 .icon {
     height: 1.25rem;
     width: 1.25rem;

@@ -1,0 +1,14 @@
+.ProjectList {
+    padding: 1rem 1rem;
+    background-color: $colorMain;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+
+    .Button {
+        margin-bottom: 1rem;
+
+        .Icon {
+            margin-right: .5rem;
+        }
+    }
+}

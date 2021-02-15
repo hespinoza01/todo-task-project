@@ -1,0 +1,10 @@
+.Modal {
+    position: fixed;
+    @include full-screen;
+    @include flex-vertical;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($colorBlack, .4);
+}

@@ -8,7 +8,7 @@ import { vars } from '@/config'
  */
 export function CreateToken(payload) {
     return new Promise((resolve, reject) => {
-        sign(payload, vars.JWT_SECRET, { expiresIn: 3600 }, (err, token) => {
+        sign(payload, vars.JWT_SECRET, (err, token) => {
             // check for errors
             if (err) {
                 reject(err.message)

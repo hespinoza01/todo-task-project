@@ -1,0 +1,12 @@
+.Home {
+    .Home-content {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 25% 1fr;
+        grid-column-gap: 1.5rem;
+        min-height: 550px;
+        padding: 0 2rem;
+        padding-bottom: 2rem;
+        margin-top: 2rem;
+    }
+}

@@ -34,3 +34,12 @@
     top: 0;
     bottom: 0;
 }
+
+// text overflow
+@mixin text-overflow($max-width: 75px, $min-width: 75px) {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: $min-width;
+    max-width: $max-width;
+}

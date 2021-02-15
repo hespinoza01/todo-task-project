@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Swal from 'sweetalert2'
 import { BASE_URL_SERVER } from 'utils'
 import { getAuth, removeAuth } from 'services'
 
@@ -11,18 +12,6 @@ import { getAuth, removeAuth } from 'services'
 const Http = axios.create({
     // api base url
     baseURL: BASE_URL_SERVER,
-    validateStatus: status => {
-        if (status === 401) {
-            removeAuth()
-            return true
-        }
-
-        if (status === 404) {
-            //window.location.href = '/404'
-        }
-
-        return status >= 200 && status < 300
-    },
 })
 
 /**
@@ -35,6 +24,17 @@ Http.interceptors.request.use(config => {
     }
 
     return config
+})
+
+Http.interceptors.response.use(async response => {
+    if (response.status === 401) {
+        await Swal.fire('Ha ocurrido un error', response.data.message, 'error')
+
+        removeAuth()
+        window.location.href = '/'
+    }
+
+    return response
 })
 
 export default Http
