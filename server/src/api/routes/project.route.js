@@ -6,6 +6,7 @@ import {
     getProjectsFromUserController,
 } from '@/api/controllers/project.controller'
 import { AuthMiddleware } from '@/api/middlewares'
+import TaskRoutes from './task.route'
 
 const router = Router()
 
@@ -21,5 +22,7 @@ router
     .route('/:projectId')
     .get(getProjectByIdController)
     .put(updateProjectController)
+
+router.use('/:projectId/task', TaskRoutes)
 
 export default router

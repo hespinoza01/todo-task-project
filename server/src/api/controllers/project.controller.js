@@ -65,7 +65,7 @@ export async function getProjectByIdController(req, res) {
         const project = await ProjectService.getProjectById(projectId)
 
         // check if user is owner of project
-        if (projectId.UserId !== UserId) {
+        if (project.UserId !== UserId) {
             throw String('No se encontró el proyecto')
         }
 

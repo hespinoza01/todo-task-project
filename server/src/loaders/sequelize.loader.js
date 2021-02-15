@@ -26,7 +26,7 @@ export default async function (sequelizeInstance) {
     ProjectModel.hasMany(TaskModel)
 
     // models sync
-    await sequelizeInstance.sync({ alter: true })
+    await sequelizeInstance.sync({ alter: false })
 
     // Initialize models data
     if ((await TaskStateModel.count()) === 0) {
