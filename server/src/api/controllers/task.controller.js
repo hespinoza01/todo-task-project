@@ -38,7 +38,7 @@ export async function getTaskFromProjectController(req, res) {
     try {
         // extract project id
         const { projectId } = req.params
-        console.log(req.params)
+
         const response = await TaskService.getTaskFromProject(projectId)
 
         res.send(response)

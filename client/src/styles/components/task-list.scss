@@ -1,0 +1,29 @@
+.TaskList {
+    margin-top: 1rem;
+    padding: .5rem;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+
+    .Title {
+        user-select: none;
+        margin-bottom: 1rem;
+    }
+
+    &.pending {
+        .TaskItem {
+            background-color: rgba($colorRed, .4);
+        }
+    }
+
+    &.process {
+        .TaskItem {
+            background-color: rgba($colorYellow, .4);
+        }
+    }
+
+    &.ending {
+        .TaskItem {
+            background-color: rgba($colorGreen, .4);
+        }
+    }
+}

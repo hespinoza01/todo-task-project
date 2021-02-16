@@ -26,24 +26,7 @@ export default function TaskForm({
         let task = {}
 
         if (formData.value.id) {
-            // capture task status
-            const { TaskStateId: status } = formData.value
-            // define key list to ommit
-            const keyToOmmit = [
-                'createAt',
-                'updatedAt',
-                'ProjectId',
-                'TaskStateId',
-                'TaskState',
-            ]
-
-            // build final dataSend
-            const dataSend = ommitObjectKey(
-                { ...formData, status },
-                ...keyToOmmit
-            )
-
-            task = await TaskService.updateTask(projectId, dataSend)
+            task = await TaskService.updateTask(projectId, formData.value)
         } else {
             task = await TaskService.createTask(projectId, formData.value)
         }

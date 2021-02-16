@@ -1,4 +1,4 @@
-import { Http, ErrorAlert, SuccessAlert } from 'utils'
+import { Http, ErrorAlert, SuccessAlert, ommitObjectKey } from 'utils'
 
 const TaskService = {}
 
@@ -35,11 +35,25 @@ TaskService.createTask = function (projectId, dataSend) {
  * @param {Number} projectId
  * @param {String} dataSend
  */
-TaskService.updateTask = function (projectId, dataSend) {
+TaskService.updateTask = function (projectId, dataSend, showalert = true) {
     return new Promise(async (resolve, _) => {
         try {
             const { id } = dataSend
 
+            // capture task status
+            const { TaskStateId: status } = dataSend
+            // define key list to ommit
+            const keyToOmmit = [
+                'createdAt',
+                'updatedAt',
+                'ProjectId',
+                'TaskStateId',
+                'TaskState',
+            ]
+
+            // build final dataSend
+            dataSend = ommitObjectKey({ ...dataSend, status }, ...keyToOmmit)
+            console.log(dataSend)
             const { data } = await Http.put(
                 `/project/${projectId}/task/${id}`,
                 dataSend
@@ -49,7 +63,10 @@ TaskService.updateTask = function (projectId, dataSend) {
                 throw String(data.message)
             }
 
-            SuccessAlert('Tarea modificada con éxito')
+            if (showalert) {
+                SuccessAlert('Tarea modificada con éxito')
+            }
+
             resolve(data)
         } catch (error) {
             console.error(error)

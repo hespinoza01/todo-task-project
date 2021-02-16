@@ -58,14 +58,15 @@ function updateTask(taskId, taskData) {
             const { ProjectId } = taskData
 
             // check if task is associate to register project
-            if (ProjectId !== task.get('ProjectId')) {
+            if (parseInt(ProjectId) !== task.get('ProjectId')) {
                 reject('No tienes permisos para actualizar este tarea')
             }
 
             // remove inmutable project data
             taskData = ommitKey(taskData, 'id', 'ProjectId')
+            taskData.TaskStateId = taskData.status
 
-            const updatedTask = await project.update(taskData)
+            const updatedTask = await task.update(taskData)
 
             resolve(updatedTask.get({ plain: true }))
         } catch (error) {

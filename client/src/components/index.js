@@ -13,6 +13,8 @@ import ProjectBoard from './project-board.component'
 import ProjectForm from './project-form.component'
 import Modal from './modal.component'
 import TaskForm from './task-form.component'
+import TaskList from './task-list.component'
+import TaskItem from './task-item.component'
 
 export {
     AppLoader,
@@ -30,4 +32,6 @@ export {
     ProjectForm,
     Modal,
     TaskForm,
+    TaskList,
+    TaskItem,
 }
