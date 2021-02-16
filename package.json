@@ -15,7 +15,5 @@
         "url": "https://github.com/hespinoza01/todo-task-project-backend/issues"
     },
     "homepage": "https://github.com/hespinoza01/todo-task-project-backend#readme",
-    "dependencies": {
-        "react-beautiful-dnd": "^13.0.0"
-    }
+    "dependencies": {}
 }
