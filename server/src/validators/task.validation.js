@@ -2,7 +2,7 @@ import Joi from '@hapi/joi'
 import { ValidationErrorMessage } from '@/utils'
 
 export default function TaskValidation(body) {
-    return new Promise(resolve, reject => {
+    return new Promise((resolve, reject) => {
         const schema = Joi.object({
             id: Joi.number().positive().messages({
                 'number.base': 'Ingrese un ID de tarea válido',

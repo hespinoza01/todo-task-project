@@ -36,7 +36,7 @@ ProjectService.createProject = function ({ name, description, archived = 0 }) {
 ProjectService.updateProject = function (dataSend) {
     return new Promise(async (resolve, _) => {
         try {
-            const { data } = Http.put(`/project/${dataSend.id}`, dataSend)
+            const { data } = await Http.put(`/project/${dataSend.id}`, dataSend)
 
             // check for errors
             if (data.error) {
@@ -59,7 +59,7 @@ ProjectService.updateProject = function (dataSend) {
 ProjectService.getProject = function (projectId) {
     return new Promise(async (resolve, _) => {
         try {
-            const { data } = Http.get(`/project/${projectId}`)
+            const { data } = await Http.get(`/project/${projectId}`)
 
             // check for errors
             if (data.error) {

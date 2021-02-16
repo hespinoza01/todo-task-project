@@ -10,16 +10,21 @@ import { ProjectService } from 'services'
 // import utils
 import { randomKey } from 'utils'
 
+// import hooks and store
+import { useAppContext } from 'hooks'
+import { actions } from 'store'
+
 export default function ProjectList({ onDetail = _ => {} }) {
-    const [projects, setProjects] = useState([])
+    const [state, dispatch] = useAppContext()
     const [addProject, setAddProject] = useState(false)
+    const [activeProject, setActiveProject] = useState(-1)
 
     /**
      * Init project settings
      */
     const configureComponent = async _ => {
         const data = await ProjectService.getProjectList()
-        setProjects(data)
+        dispatch(actions.SET_PROJECTS, data)
     }
 
     /**
@@ -27,7 +32,7 @@ export default function ProjectList({ onDetail = _ => {} }) {
      * @param {Object} response
      */
     const onCreateProject = response => {
-        setProjects([...projects, response])
+        dispatch(actions.SET_PROJECTS, [...state.projects, response])
         setAddProject(false)
     }
 
@@ -42,9 +47,13 @@ export default function ProjectList({ onDetail = _ => {} }) {
                 nuevo proyecto
             </Button>
 
-            {projects.map(item => (
+            {state.projects.map(item => (
                 <ProjectItem
-                    onClick={_ => onDetail(item)}
+                    className={`${activeProject === item.id ? 'active' : ''}`}
+                    onClick={_ => {
+                        onDetail(item)
+                        setActiveProject(item.id)
+                    }}
                     key={randomKey()}
                     data={item}
                 />

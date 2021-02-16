@@ -6,6 +6,8 @@ import { useForm, useLoader } from 'hooks'
 
 import { ProjectService } from 'services'
 
+import { ommitObjectKey } from 'utils'
+
 export default function ProjectForm({
     onSubmit = _ => {},
     onCancel = _ => {},
@@ -24,7 +26,12 @@ export default function ProjectForm({
 
         // if exist id key, update project
         if (formData.value.id) {
-            project = await ProjectService.updateProject(formData.value)
+            // list of keys to remove from datasend
+            const keyToOmmit = ['createdAt', 'updatedAt', 'UserId']
+
+            project = await ProjectService.updateProject(
+                ommitObjectKey(formData.value, ...keyToOmmit)
+            )
         } else {
             // create new project
             project = await ProjectService.createProject(formData.value)

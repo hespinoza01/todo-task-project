@@ -15,7 +15,7 @@ export default {
 function createTask(ProjectId, taskData) {
     return new Promise(async (resolve, reject) => {
         try {
-            if (!projectId || !isObject(taskData)) {
+            if (!ProjectId || !isObject(taskData)) {
                 throw String('Invalid input data')
             }
 

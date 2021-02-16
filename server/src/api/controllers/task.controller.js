@@ -12,7 +12,7 @@ export async function createTaskController(req, res) {
     try {
         // extract project id
         const { projectId } = req.params
-
+        console.log(req.params)
         // validate input data
         const data = await TaskValidation(req.body)
 
@@ -20,6 +20,7 @@ export async function createTaskController(req, res) {
 
         res.send(response)
     } catch (message) {
+        console.log(message)
         res.send({
             error: true,
             message,

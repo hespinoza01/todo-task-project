@@ -21,6 +21,18 @@ export default function Reducer(state, action) {
         case actions.DELETE_USER:
             return { ...state, user: {} }
 
+        /**
+         * Store project list
+         */
+        case actions.SET_PROJECTS:
+            return { ...state, projects: payload }
+
+        /**
+         * Store task list
+         */
+        case actions.SET_TASKS:
+            return { ...state, tasks: payload }
+
         default:
             return state
     }

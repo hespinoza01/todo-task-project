@@ -4,6 +4,7 @@ import Http from 'utils/http.util'
 import randomKey from 'utils/random-key.util'
 import copyClipboard from 'utils/copy-clipboard.util'
 import { encodeToken, decodeToken } from 'utils/token-cipher.util'
+import ommitObjectKey from './ommit-object-key.util'
 
 export {
     BASE_URL_SERVER,
@@ -14,4 +15,5 @@ export {
     copyClipboard,
     encodeToken,
     decodeToken,
+    ommitObjectKey,
 }
