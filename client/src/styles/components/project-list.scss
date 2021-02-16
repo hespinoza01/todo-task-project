@@ -4,6 +4,13 @@
     box-shadow: $box-shadow;
     border-radius: $border-radius;
 
+    .empty {
+        text-align: center;
+        color: lighten($colorBlack, 40);
+        font-size: 1.1rem;
+        margin-top: 2rem;
+    }
+
     .Button {
         margin-bottom: 1rem;
 

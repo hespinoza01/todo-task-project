@@ -27,6 +27,10 @@ export default function TaskList({ type = -1 }) {
 
                     {type === 3 && <h3 className='Title'>Finalizadas</h3>}
 
+                    {state.tasks.length === 0 && (
+                        <p className='empty'>Sin tareas para mostrar</p>
+                    )}
+
                     {state.tasks.map(item => {
                         if (item.TaskStateId === type) {
                             return <TaskItem key={randomKey()} data={item} />

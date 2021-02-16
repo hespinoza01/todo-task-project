@@ -9,6 +9,11 @@
         margin-bottom: 1rem;
     }
 
+    .empty {
+        text-align: center;
+        color: lighten($colorBlack, 20)
+    }
+
     &.pending {
         .TaskItem {
             background-color: rgba($colorRed, .4);

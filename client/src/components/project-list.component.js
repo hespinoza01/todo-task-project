@@ -47,6 +47,10 @@ export default function ProjectList({ onDetail = _ => {} }) {
                 nuevo proyecto
             </Button>
 
+            {state.projects.length === 0 && (
+                <p className='empty'>Sin proyectos para mostrar</p>
+            )}
+
             {state.projects.map(item => (
                 <ProjectItem
                     className={`${activeProject === item.id ? 'active' : ''}`}

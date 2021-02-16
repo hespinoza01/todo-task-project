@@ -103,6 +103,15 @@ export default function ProjectBoard({ data = {} }) {
         },
         [JSON.stringify(data)]
     )
+
+    if (Object.keys(data).length === 0) {
+        return (
+            <div className='ProjectBoard'>
+                <p className='empty'>Seleccione un proyecto a visualizar</p>
+            </div>
+        )
+    }
+
     return (
         <div className='ProjectBoard'>
             <header>
