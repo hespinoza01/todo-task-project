@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 export default {
-    PORT: process.env.PORT || 5000,
+    PORT: process.env.PORT || 8080,
     PASSWORD_SECRET: process.env.PASSWORD_SECRET || 'secret',
     JWT_SECRET: process.env.JWT_SECRET || 'secret',
     DB: {
@@ -13,5 +13,6 @@ export default {
         USERNAME: process.env.DB_USERNAME,
         PASSWORD: process.env.DB_PASSWORD,
         DIALECT: process.env.DB_DIALECT || 'mysql',
+        INSTANCE_CONNECTION_NAME: process.env.INSTANCE_CONNECTION_NAME || null,
     },
 }

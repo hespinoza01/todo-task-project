@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/config/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;AAAA;;AACA","sourcesContent":["import vars from './vars.config'\r\nimport db from './db.config'\r\n\r\nexport { vars, db }\r\n"],"file":"index.js"}

@@ -21,7 +21,7 @@ export default async (app, api) => {
 
     // config middlewares
     app.use(helmet())
-    app.use(cors())
+    app.use(cors({ origin: '*' }))
     app.use(morgan('dev'))
     app.use(bodyParser.json())
     app.use(urlencoded({ extended: false }))

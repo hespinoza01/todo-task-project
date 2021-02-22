@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/api/routes/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;AAAA;;AACA","sourcesContent":["import UserRoutes from './user.route'\r\nimport ProjectRoutes from './project.route'\r\n\r\nexport { UserRoutes, ProjectRoutes }\r\n"],"file":"index.js"}
