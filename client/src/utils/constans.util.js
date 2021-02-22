@@ -1,4 +1,4 @@
-export const BASE_URL_SERVER = 'http://127.0.0.1:3080'
+export const BASE_URL_SERVER = 'https://todo-project-task.uc.r.appspot.com'
 
 export const TaskStatus = {
     PENDING: 1,
