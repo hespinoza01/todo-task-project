@@ -6,8 +6,6 @@ import { useForm, useLoader } from 'hooks'
 
 import { TaskService } from 'services'
 
-import { ommitObjectKey } from 'utils'
-
 export default function TaskForm({
     onSubmit = _ => {},
     onCancel = _ => {},
@@ -51,7 +49,7 @@ export default function TaskForm({
     return (
         <Modal>
             <form
-                name={formData.name}
+                ref={formData.ref}
                 onChange={formData.onChange}
                 onSubmit={_onSubmit}
                 className='TaskForm'

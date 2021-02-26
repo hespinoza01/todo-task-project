@@ -39,6 +39,7 @@ export default function Register() {
     return (
         <section className='Register'>
             <form
+                ref={data.ref}
                 onChange={data.onChange}
                 onSubmit={onRegister}
                 className='Register-Form'

@@ -53,7 +53,7 @@ export default function ProjectForm({
     return (
         <Modal>
             <form
-                name={formData.name}
+                ref={formData.ref}
                 onChange={formData.onChange}
                 onSubmit={_onSubmit}
                 className='ProjectForm'
